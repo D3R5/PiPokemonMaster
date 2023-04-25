@@ -1,0 +1,9 @@
+.container{
+    background-image: url('./confetti-doodles.png');
+    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    align-items: flex-start;
+}

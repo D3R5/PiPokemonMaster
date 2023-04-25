@@ -1,0 +1,43 @@
+.container{
+    
+    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    margin-top: 190px;
+}
+.containerCards{
+    
+    display: flex;
+    justify-content: center;
+}
+.pagContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    border: 0px;
+    margin: 5px;
+    background-color: #616161;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    transition: all .25s;
+}
+.button:hover{
+    background-color: #474747;
+}
+.active{
+    background-color: #34b7eb;
+    width: 35px;
+    height: 35px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.712);
+    color: black;
+}

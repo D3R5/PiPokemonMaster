@@ -1,0 +1,66 @@
+.container{
+    background-image: url('./pokefondo.png');
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0px;
+    animation: containeranim 10s infinite;
+    animation-direction: alternate, reverse, normal;
+    animation-timing-function: ease-in-out;
+    z-index: 10;
+}
+@keyframes containeranim {
+    from{background-size: 97%;}
+    to{background-size: 100%;}
+}
+.image{
+    margin-bottom: 15%;
+    width: 40%;
+    height: auto;
+}
+
+
+.pokedex {
+    position: fixed;
+    margin-top: 1.5%;
+    margin-right: 55%;
+    transform: rotate(2deg);
+}
+
+.title{
+    margin-bottom: 100px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: #FFCB05;
+    text-shadow: 2px 0 #3A5CA8, -2px 0 #3A5CA8, 0 2px #3A5CA8, 0 -2px #3A5CA8, 1px 1px #3A5CA8, -1px -1px #3A5CA8, 1px -1px #3A5CA8, -1px 1px #3A5CA8;
+}
+.button{
+    margin-top: 20%;
+    width: 100%;
+    
+    text-decoration: none;
+}
+.text{
+    position: fixed;
+    margin-top: -28.4%;
+    margin-left: 26%;
+    font-size: 28px;
+    color: rgb(241, 241, 241);
+    text-shadow: 0px 0px 20px #ffffff;
+    font-family: cursive;
+    font-weight: bold;    
+    opacity: 1;
+    animation: textanim 1s infinite;
+    animation-direction: alternate, reverse, normal;
+    animation-timing-function: ease-out; 
+}
+@keyframes textanim {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
