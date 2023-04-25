@@ -6,8 +6,8 @@ export default function ErrorPage(){
     return(
         <div className={style.container}>
             <div className={style.mini}>
-                <p className={style.title}>Pagina no encontrada</p>
-                <Link to={"/home"} className={style.button}>Home</Link>
+                <p className={style.title}>Page not found</p>
+                <Link to={"/home"} className={style.button}>Back to Home</Link>
             </div>
         </div>
     )
