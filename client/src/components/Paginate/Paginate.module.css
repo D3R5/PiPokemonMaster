@@ -1,6 +1,4 @@
 .container{
-    
-    
     width: 100%;
     display: flex;
     justify-content: center;
@@ -9,7 +7,6 @@
     margin-top: 190px;
 }
 .containerCards{
-    
     display: flex;
     justify-content: center;
 }
@@ -25,17 +22,17 @@
     border-radius: 50px;
     border: 0px;
     margin: 5px;
-    background-color: #616161;
+    background-color:  #e7ca24;
     font-weight: bold;
     font-size: 15px;
-    color: white;
+    color: rgb(0, 0, 0);
     transition: all .25s;
 }
 .button:hover{
-    background-color: #474747;
+    background-color: #f7e26b;
 }
 .active{
-    background-color: #34b7eb;
+    background-color: #6b21e2;
     width: 35px;
     height: 35px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.712);

@@ -5,7 +5,7 @@ import { find_create_pokemon, find_pokemon } from "../../redux/actions/actions";
 
 import style from "./Create.module.css";
 
-
+      
 export default function Create() {
 
     const dispatch = useDispatch();
@@ -20,8 +20,8 @@ export default function Create() {
         special_defense: 0,
         speed: 0,
         types: [],
-        height: "",
-        weight: ""
+        height: 0,
+        weight: 0,
     });
     
     const [errors, setErrors] = useState({
@@ -49,9 +49,9 @@ export default function Create() {
                 break;
             case "image":
                 if (data[0] === ".") error = "Ingrese una url valida"
-                if (!(data.substring(data.length - 4) === ".png" || data.substring(data.length - 4) === ".jpg")) error = "Debe ser un archivo PNG o JPG";
+                if (!(data.substring(data.length - 4) === ".png" || data.substring(data.length - 4) === ".jpg")) error = "La URL debe tener extensión .jpg o .png";
                 if (data.includes(" ")) error = "La url de la imagen no puede contener espacios";
-                if (data === "") error = "No puede quedar vacio";
+                if (data === "") error = "Este espacio no puede quedar en blanco";
                 break;
             case "hp":
             case "attack":
@@ -59,15 +59,9 @@ export default function Create() {
             case "defense":
             case "special_defense":
             case "speed":
-                if (data <= 0) error = "Seleccione un valor";
-                break;
             case "height":
             case "weight":
-                if (data <= 0) error = "Ingrese un numero mayor a 0";
-                if (data.includes(" ")) error = "No se permiten espacios";
-                if (data === "") error = "No puede quedar vacio"
-                if (isNaN(data)) error = "Ingrese un numero";
-                if (data.includes(",")) error = "No se permiten \",\""
+                if (data <= 0) error = "Seleccione un valor";
                 break;
             case "types":
                 if (data.length === 0) error = "Debe escoger al menos un tipo"
@@ -161,9 +155,9 @@ export default function Create() {
 
     return (
         <div className={style.container}>
-            <button onClick={handleSubmit} className={style.title}>Click me to create your pokemon!!</button>
+            <button onClick={handleSubmit} className={style.title}>Click me to create your pokemon!!!</button>
             <form className={style.formClass}>
-                <div style={{ width: "45%", display: "flex", alignItems: "flex-start", flexWrap: "wrap", justifyContent:"center" }}>
+                <div style={{ width: "60%", display: "flex", alignItems: "flex-start", flexWrap: "wrap", justifyContent:"center" }}>
                     <div className={style.contInputText}>
                         <label htmlFor="">Name</label>
                         <input type="text" name="name" placeholder="Name" value={dataPokemon.name} onChange={handleChange} className={style.inputText} />

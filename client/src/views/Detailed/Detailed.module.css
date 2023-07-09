@@ -1,5 +1,5 @@
 .container{
-    background-image: url('./confetti-doodles.png');
+    background-image: url('../../assets//background.png');
     width: 100%;
     padding-top: 170px;
     display: flex;

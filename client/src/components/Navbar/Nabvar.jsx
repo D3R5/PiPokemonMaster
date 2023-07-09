@@ -5,8 +5,8 @@ import Search from "../Search/Search"
 import { useDispatch } from "react-redux";
 import { find_pokemon } from "../../redux/actions/actions";
 
-import image from "./pokeball.png"
-import pokeHenry from "./pokehenry.png"
+import image from "../../assets/pokeball.png"
+import pokeHenry from "../../assets/pokehenry.png"
 
 
 export default function Navbar() {
@@ -39,7 +39,7 @@ export default function Navbar() {
             <Search />
             <img className={style.pokehenry} src={pokeHenry} alt="pokehenry" />
             <img className={style.pokehenry2} src={pokeHenry} alt="pokehenry" />
-            <button data="Reload pokemons" className={style.reload} onClick={reloadPokes}>
+            <button data="Reload" className={style.reload} onClick={reloadPokes}>
                 <img src={image} alt="reload" />
             </button>
         </div>

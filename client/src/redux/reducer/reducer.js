@@ -13,7 +13,7 @@ import {
     SET_PAGE,
     SET_SEARCH_SUCCESS
 } from "../actions/actions";
-
+ 
 const initialState = {
     originalPokemons: [],
     pokemons: [],

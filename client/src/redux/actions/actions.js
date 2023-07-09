@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 export const FIND_POKEMON = "FIND_POKEMON";
 export const FIND_FAILURE = "FIND_FAILURE";
@@ -20,19 +20,20 @@ export const SET_SEARCH_SUCCESS = "SET_SEARCH_SUCCESS";
 
 
 
-export const find_pokemon = () => {
-    return (dispatch) => {
-        dispatch(find_pokemon_request());
-        fetch("http://localhost:3001/pokemons")
-            .then(response => response.json())
-            .then(pokemons => {
-                dispatch(find_pokemon_success(pokemons))
-            })
-            .catch(error => {
-                dispatch(find_failure(error))
-            })
-    }
-} 
+
+//!con axios
+// export const find_pokemon = () => {
+//     return (dispatch) => {
+//         dispatch(find_pokemon_request());
+//         axios.get("http://localhost:3001/pokemons")
+//             .then(response => {
+//                 dispatch(find_pokemon_success(response.data));
+//             })
+//             .catch(error => {   
+//                 dispatch(find_failure(error));
+//             });
+//     };
+// };
 export const find_failure = (error) => {
     return {
         type: FIND_FAILURE,
@@ -50,33 +51,70 @@ export const find_pokemon_success = (pokemons) => {
         payload: pokemons
     }
 }
+// export const find_create_pokemon = (pokemon) => {
+//     return (dispatch) => {
+//         dispatch(find_pokemon_request());
+//         fetch(`http://localhost:3001/pokemons`, {
+//             method: "POST",
+//             body: JSON.stringify(pokemon),
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             }
+//         })
+//         .then(response => response.json())
+//         .then(response => {
+//             if(typeof(response) === "string"){
+//                 alert(response)
+//             }else{
+//                 let poke = response;
+//                 poke.types = pokemon.types
+//                 alert("Pokemon creado exitosamente");
+//                 dispatch(create_pokemon(response))
+//             }
+//         })
+//         .catch(error => {
+//             alert("No se pudo crear el pokemon")
+//             dispatch(find_failure(error))
+//         })
+//     }
+// }
+export const find_pokemon = () => {
+    return (dispatch) => {
+        dispatch(find_pokemon_request());
+        fetch("http://localhost:3001/pokemons")
+            .then(response => response.json())
+            .then(pokemons => {
+                dispatch(find_pokemon_success(pokemons))
+            })
+            .catch(error => {   
+                dispatch(find_failure(error))
+            })
+    }
+} 
 export const find_create_pokemon = (pokemon) => {
     return (dispatch) => {
         dispatch(find_pokemon_request());
-        fetch(`http://localhost:3001/pokemons`, {
-            method: "POST",
-            body: JSON.stringify(pokemon),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => response.json())
-        .then(response => {
-            if(typeof(response) === "string"){
-                alert(response)
-            }else{
-                let poke = response;
-                poke.types = pokemon.types
-                alert("Pokemon creado exitosamente");
-                dispatch(create_pokemon(response))
-            }
-        })
-        .catch(error => {
-            alert("No se pudo crear el pokemon")
-            dispatch(find_failure(error))
-        })
-    }
-}
+        axios.post("http://localhost:3001/pokemons", pokemon, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (typeof (response.data) === "string") {
+                    alert(response.data);
+                } else {
+                    let poke = response.data;
+                    poke.types = pokemon.types;
+                    alert("pokemon successfully created");
+                    dispatch(create_pokemon(response.data));
+                }
+            })
+            .catch(error => {
+                alert("Couldn't create pokemon");
+                dispatch(find_failure(error));
+            });
+    };
+};
 export const find_search_request = () => {
     return{
         type: FIND_SEARCH_REQUEST

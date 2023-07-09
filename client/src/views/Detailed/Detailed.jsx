@@ -6,7 +6,7 @@ import { detailed_pokemon } from "../../redux/actions/actions";
 import ErrorPage from "../../components/ErrorPage/ErrorPage";
 import Loading from "../../components/Loading/Loading";
 
-import imageDefault from "./pikasurf.jpg";
+import imageDefault from "../../assets/pikasurf.jpg";
 import style from "./Detailed.module.css";
 
 

@@ -113,7 +113,7 @@ export default function Filters() {
                 </select>
             </div>
             <button onClick={handleReset} className={style.button}>
-                Reset filters
+                Clear filters
             </button>
         </div>
     );

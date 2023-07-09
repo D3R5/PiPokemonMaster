@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
         const types = await createTypes();
         return res.json(types)
     } catch (error) {
-        res.status(400).json("Error al obtener la informacion")
+        res.status(400).json("Error getting the information")
     }
 })
 module.exports = router;

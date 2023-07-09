@@ -2,9 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import style from "./Card.module.css";
-import imageDefault from "./pikasurf.jpg";
+import imageDefault from "../../assets/pikasurf.jpg";
 
 export default function Card({ pokemon }) {
+    
+
+    const imgback = () => {
+        return (
+            <div>
+                {pokemon.imageBack.map((t, i) => {
+                    t = t.substring(0, 1).toUpperCase() + t.substring(1, t.length);
+                    return <p key={i} className={[style.type, t].join(" ")} style={selectTypeClass(t)}>{t}</p>
+                })}
+            </div>
+        )
+    }
 
     const selectImage = () => {
         let num = Math.round(Math.random() * 100);
@@ -111,9 +123,10 @@ export default function Card({ pokemon }) {
         }
         return {background: bg, color: color}
     }
+    
     return (
         <div className={style.container}>
-            <img src={selectImage()} alt="pokemon-Pic" className={style.image} onError={(e => {e.target.onerror = null; e.target.src = imageDefault})} />
+            <img src={selectImage()} alt="Pokemon_image" className={style.image} onError={(e => {e.target.onerror = null; e.target.src = imageDefault})} />
             <p className={style.name}>{pokemon.name.substring(0,1).toUpperCase()+pokemon.name.substring(1,pokemon.name.length)}</p>
             {showTypes()}
             <Link to={`details/${pokemon.id}`} className={style.button}>Poke details</Link>

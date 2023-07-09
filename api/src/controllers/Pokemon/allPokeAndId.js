@@ -34,9 +34,7 @@ const getAllPoke = async (name) => {
                     }
                     return poke;
                 }
-
                 const pokeAPI = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`, {
-                
                 });
                 if (pokeAPI) {
                     let stats = pokeAPI.data.stats.map(s => [s.stat.name, s.base_stat]);
@@ -47,6 +45,7 @@ const getAllPoke = async (name) => {
                         weight: pokeAPI.data.weight,
                         height: pokeAPI.data.height,
                         image: pokeAPI.data.sprites.other.home.front_default,
+                        imageBack: pokeAPI.data.sprites.other.home.back_default,
                         imageShiny: pokeAPI.data.sprites.other.home.front_shiny,
                         types: types,
                         stats: stats
@@ -54,10 +53,9 @@ const getAllPoke = async (name) => {
                     return poke;
                 }
             } catch (error) {
-                return `Lo siento, no se pudo encontrar ningún resultado con el nombre ${name} 😞`
+                return `Sorry, no results could be found for the name ${name} 😞`
             }
         }
-
         let apiPokes = await allApi("https://pokeapi.co/api/v2/pokemon");
         let dbPokes = await allDB();
         console.log(apiPokes)
@@ -91,11 +89,9 @@ const getIdPoke = async (id) => {
             ["speed", speed],
         ];
         let types = poke.types.map(t => t.name)
-
         quantity = {
             id, name, weight, height, image, types, stats
         }
-
         return quantity;
     }
     //Cuando el id es de la Api
@@ -118,7 +114,5 @@ const getIdPoke = async (id) => {
         return quantity;
     }
 }
-
-
 
 module.exports = {getAllPoke, getIdPoke};

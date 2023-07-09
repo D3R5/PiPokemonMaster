@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import style from "./Landing.module.css";
-import image from "./logo.png"
-import pokedex from "./pokedex.png"
+import image from "../../assets/logo.png"
+import pokedex from "../../assets/pokedex.png"
 
 export default function Landing(){
     return(
@@ -12,4 +12,4 @@ export default function Landing(){
             <Link to="/home" className={style.button}><p className={style.text}>PRESS START</p></Link>
         </div>
     )
-}
+}  

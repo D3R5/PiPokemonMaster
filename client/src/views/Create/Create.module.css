@@ -1,6 +1,5 @@
 .container {
-    background-image: url('./confetti-doodles.png');
-
+    background-image: url('../../assets/background.png');
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,7 +29,7 @@
 }
 
 .formClass {
-    background-color: white;
+    background-color: beige;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -64,7 +63,7 @@
 .inputText {
     width: 100%;
     border-radius: 10px;
-    border: 2px solid #313131;
+    border: 2px solid #363434;
 }
 
 .contTypes {
@@ -138,8 +137,8 @@
     height: 14px;
     cursor: pointer;
     animate: 0.2s;
-    box-shadow: 1px 1px 1px #50555C;
-    background: #50555C;
+    box-shadow: 1px 1px 1px #5a4e4e;
+    background: #5a4e4e;
     border-radius: 14px;
     border: 0px solid #000000;
 }
@@ -157,7 +156,7 @@
 }
 
 .inputRange[type=range]:focus::-webkit-slider-runnable-track {
-    background: #50555C;
+    background: #375277;
 }
 
 .inputRange[type=range]::-moz-range-track {
@@ -165,8 +164,8 @@
     height: 14px;
     cursor: pointer;
     animate: 0.2s;
-    box-shadow: 1px 1px 1px #50555C;
-    background: #50555C;
+    box-shadow: 1px 1px 1px #5a4e4e;
+    background: #5a4e4e;
     border-radius: 14px;
     border: 0px solid #000000;
 }
@@ -192,17 +191,17 @@
 }
 
 .inputRange[type=range]::-ms-fill-lower {
-    background: #50555C;
+    background: #5a4e4e;
     border: 0px solid #000000;
     border-radius: 28px;
-    box-shadow: 1px 1px 1px #50555C;
+    box-shadow: 1px 1px 1px #5a4e4e;
 }
 
 .inputRange[type=range]::-ms-fill-upper {
-    background: #50555C;
+    background: #5a4e4e;
     border: 0px solid #000000;
     border-radius: 28px;
-    box-shadow: 1px 1px 1px #50555C;
+    box-shadow: 1px 1px 1px #5a4e4e;
 }
 
 .inputRange[type=range]::-ms-thumb {

@@ -14,8 +14,7 @@ router.get("/", async (req, res) => {
             res.json(pokes);
         }
     } catch (error) {
-        
-        res.status(400).json("No se pudo obtener la información.")
+        res.status(400).json("The information could not be obtained.")
     }
 })
 
@@ -24,9 +23,8 @@ router.get("/:id", async (req, res) =>{
         const data = await getIdPoke(req.params.id)
         res.json(data)
     } catch (error) {
-        res.status(400).json("No se encontró el pokemon")
+        res.status(400).json("pokemon not found")
     }
 })
-
 
 module.exports = router;

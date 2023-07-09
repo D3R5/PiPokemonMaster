@@ -18,7 +18,7 @@ export default function Home(){
             dispatch(find_pokemon())
         }
     },[pokemon.originalPokemons, dispatch, pokemon.loading]);
-
+  
     return(
         <div className={style.container}>
             {(pokemon.loading) && <Loading/>}

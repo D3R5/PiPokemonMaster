@@ -1,11 +1,10 @@
 .container{
-    
     width: 300px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
+    background-color: beige;
 }
 .container:hover{
     transform: translateY(-10px);
@@ -17,8 +16,14 @@
     background-color: beige;
     width: 100%;
     border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
 }
 .name{
+    text-align: center;
     font-size: 25px;  
     margin-top: 10px;
     margin-bottom: 0px;
@@ -26,18 +31,21 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .type{
+    text-align: center;
+    align-items: center;
     width: 70px;
     margin-right: 5px;
     text-align: center;
     border-radius: 10px;
 }
 .typeContainer{
-    margin-left: 10px;
+    margin-left: 100px;
     display: flex;
     flex-wrap: wrap;
 }
-
 .button{
+    text-align: center;
+    align-items: center;
     text-decoration: none;
     color: white;
     background-color: #B1B1B1;

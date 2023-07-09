@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { search_request, set_search_success } from "../../redux/actions/actions";
 import style from "./Search.module.css";
-import lupa from './lupa.png';
+import lupa from '../../assets/lupa.png';
 
 export default function Search() {
 
@@ -30,7 +30,7 @@ export default function Search() {
     const dispatch = useDispatch();
     const pokemon = useSelector((state) => state.pokemon);
     const history = useHistory();
-
+ 
     useEffect(() => {
         const redirect = () => {
             dispatch(set_search_success())
@@ -61,7 +61,7 @@ export default function Search() {
             <button id="myButton" src="lupa" onClick={handleClick} className={style.searchButton}>
                 <img src={lupa} alt="search" className={style.lupa} />
             </button>
-            <p className={style.text} >Search for a Pokémon by name or using its National Pokédex number.</p>
+            
         </div>
     )
 }
